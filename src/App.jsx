@@ -27,7 +27,7 @@ function App() {
       <AppHeader />
 
       <div className="container">
-        <div className="p-2 mb-4 bg-light rounded-3">
+        <div className="p-2 mb-4 bg-dark text-white rounded-3">
           <div className="container-fluid py-5">
             <h3 className="display-5 fw-bold mb-5">Aggiungi articolo</h3>
             <button className="btn btn-primary btn-lg" type="button">
