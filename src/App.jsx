@@ -25,18 +25,68 @@ function App() {
   return (
     <>
       <AppHeader />
+
       <div className="container">
+        <div className="p-2 mb-4 bg-light rounded-3">
+          <div className="container-fluid py-5">
+            <h3 className="display-5 fw-bold mb-5">Aggiungi articolo</h3>
+            <button className="btn btn-primary btn-lg" type="button">
+              Aggiungi
+            </button>
+          </div>
+        </div>
+
         <form onSubmit={addArticle} className='my-3'>
           <div className="mb-3">
-            <label htmlFor="Articolo" className="form-label">Articoli</label>
+            <label htmlFor="Titolo" className="form-label">Titolo Articolo</label>
             <div className="input-group mb-3">
-              <input type="text" className="form-control" placeholder="Digita titolo Articolo" aria-label="Titolo Articolo" aria-describedby="button-addon2"
+              <input type="text" className="form-control" placeholder="Digita Titolo Articolo" aria-label="Titolo Articolo" aria-describedby="button-addon2"
                 value={newArticle} onChange={e => setNewArticle(e.target.value)} />
               <button className="btn btn-outline-secondary" type="submit" id="button-addon2">Aggiungi</button>
             </div>
-
-            <small id="articoloHelperId" className="form-text text-muted">Inserisci titolo articolo</small>
+            <small id="titoloHelperId" className="form-text text-muted">Inserisci titolo articolo</small>
           </div>
+
+          <div className="mb-3">
+            <label htmlFor="Immagine" className="form-label">Immagine</label>
+            <div className="input-group mb-3">
+              <input type="text" className="form-control" placeholder="Inserisci Immagine Articolo" aria-label="Immagine Articolo" aria-describedby="button-addon2"
+                value={newArticle} onChange={e => setNewArticle(e.target.value)} />
+              <button className="btn btn-outline-secondary" type="submit" id="button-addon2">Aggiungi</button>
+            </div>
+            <small id="articoloHelperId" className="form-text text-muted">Inserisci percorso immagine</small>
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="Contenuto" className="form-label">Contenuto</label>
+            <div className="input-group mb-3">
+              <input type="text" className="form-control" placeholder="Digita Contenuto Articolo" aria-label="Contenuto Articolo" aria-describedby="button-addon2"
+                value={newArticle} onChange={e => setNewArticle(e.target.value)} />
+              <button className="btn btn-outline-secondary" type="submit" id="button-addon2">Aggiungi</button>
+            </div>
+            <small id="articoloHelperId" className="form-text text-muted">Inserisci contenuto articolo</small>
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="Articolo" className="form-label">Categoria</label>
+            <div className="input-group mb-3">
+              <input type="select" className="form-control" placeholder="Seleziona Categoria Articolo" aria-label="Categoria Articolo" aria-describedby="button-addon2"
+                value={newArticle} onChange={e => setNewArticle(e.target.value)} />
+              <button className="btn btn-outline-secondary" type="submit" id="button-addon2">Aggiungi</button>
+            </div>
+            <small id="articoloHelperId" className="form-text text-muted">Seleziona categoria articolo</small>
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="Articolo" className="form-label">Tags</label>
+            <div className="input-group mb-3">
+              <input type="check-box" className="form-control" placeholder="Seleziona Tags Articolo" aria-label="Tags Articolo" aria-describedby="button-addon2"
+                value={newArticle} onChange={e => setNewArticle(e.target.value)} />
+              <button className="btn btn-outline-secondary" type="submit" id="button-addon2">Aggiungi</button>
+            </div>
+            <small id="articoloHelperId" className="form-text text-muted">Seleziona tags articolo</small>
+          </div>
+
         </form>
         <ul className="list-group my-5">
           {articles.map((article, index) => <li key={index} className="list-group-item d-flex justify-content-between">{article}
