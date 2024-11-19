@@ -30,10 +30,17 @@ function App() {
         <div className="p-2 mb-4 bg-dark text-white rounded-3">
           <div className="container-fluid py-5">
             <h3 className="display-5 fw-bold mb-5">Aggiungi articolo</h3>
-            <button className="btn btn-primary btn-lg" type="button">
+            <button className="btn btn-primary btn-lg" type="button" popovertarget="off-canvas-form">
               Aggiungi
             </button>
           </div>
+        </div>
+
+        <div id="off-canvas-form" popover="true">
+          <h2>Aggiungi il tuo Articolo</h2>
+          <button className="btn btn-primary" type="button" popovertarget="off-canvas-form" popovertargetaction="hide">
+            Chiudi
+          </button>
         </div>
 
         <form onSubmit={addArticle} className='my-3'>
