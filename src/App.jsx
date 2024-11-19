@@ -36,63 +36,65 @@ function App() {
           </div>
         </div>
 
-        <div id="off-canvas-form" popover="true">
-          <h2>Aggiungi il tuo Articolo</h2>
+        <div id="off-canvas-form" popover="true" className='p-5' style={{ minHeight: "100dvh", width: "50%" }}>
+          <div className='d-flex justify-content-between align-item-center'>
+            <h4>Aggiungi Articolo</h4>
+            <button className="btn btn-primary" type="button" popovertarget="off-canvas-form" popovertargetaction="hide">
+              Chiudi
+            </button>
+          </div>
+
+
           <form onSubmit={addArticle} className='my-3'>
+
             <div className="mb-3">
               <label htmlFor="Titolo" className="form-label">Titolo Articolo</label>
               <div className="input-group mb-3">
-                <input type="text" className="form-control" placeholder="Digita Titolo Articolo" aria-label="Titolo Articolo" aria-describedby="button-addon2"
+                <input htmlFor="titolo" name='titolo' id='titolo' type="text" className="form-control" placeholder="Digita Titolo Articolo" aria-label="Titolo Articolo" aria-describedby="button-addon2"
                   value={newArticle} onChange={e => setNewArticle(e.target.value)} />
                 <button className="btn btn-outline-secondary" type="submit" id="button-addon2">Aggiungi</button>
               </div>
-              <small id="titoloHelperId" className="form-text text-muted">Inserisci titolo articolo</small>
             </div>
 
             <div className="mb-3">
               <label htmlFor="Immagine" className="form-label">Immagine</label>
               <div className="input-group mb-3">
-                <input type="text" className="form-control" placeholder="Inserisci Immagine Articolo" aria-label="Immagine Articolo" aria-describedby="button-addon2"
+                <input htmlFor="image" name='image' id='image' type="text" className="form-control" placeholder="/images/1jpg" aria-label="Immagine Articolo" aria-describedby="button-addon2"
                   value={newArticle} onChange={e => setNewArticle(e.target.value)} />
                 <button className="btn btn-outline-secondary" type="submit" id="button-addon2">Aggiungi</button>
               </div>
-              <small id="articoloHelperId" className="form-text text-muted">Inserisci percorso immagine</small>
             </div>
 
             <div className="mb-3">
-              <label htmlFor="Contenuto" className="form-label">Contenuto</label>
-              <div className="input-group mb-3">
-                <input type="text" className="form-control" placeholder="Digita Contenuto Articolo" aria-label="Contenuto Articolo" aria-describedby="button-addon2"
-                  value={newArticle} onChange={e => setNewArticle(e.target.value)} />
-                <button className="btn btn-outline-secondary" type="submit" id="button-addon2">Aggiungi</button>
-              </div>
-              <small id="articoloHelperId" className="form-text text-muted">Inserisci contenuto articolo</small>
+              <label htmlFor="contenuto" className="form-label">Contenuto</label>
+              <textarea className="form-control" name="contenuto" id="contenuto" rows="7"></textarea>
             </div>
 
-            <div className="mb-3">
-              <label htmlFor="Articolo" className="form-label">Categoria</label>
-              <div className="input-group mb-3">
-                <input type="select" className="form-control" placeholder="Seleziona Categoria Articolo" aria-label="Categoria Articolo" aria-describedby="button-addon2"
-                  value={newArticle} onChange={e => setNewArticle(e.target.value)} />
-                <button className="btn btn-outline-secondary" type="submit" id="button-addon2">Aggiungi</button>
-              </div>
-              <small id="articoloHelperId" className="form-text text-muted">Seleziona categoria articolo</small>
-            </div>
 
-            <div className="mb-3">
-              <label htmlFor="Articolo" className="form-label">Tags</label>
-              <div className="input-group mb-3">
-                <input type="check-box" className="form-control" placeholder="Seleziona Tags Articolo" aria-label="Tags Articolo" aria-describedby="button-addon2"
-                  value={newArticle} onChange={e => setNewArticle(e.target.value)} />
-                <button className="btn btn-outline-secondary" type="submit" id="button-addon2">Aggiungi</button>
-              </div>
-              <small id="articoloHelperId" className="form-text text-muted">Seleziona tags articolo</small>
+            <select className="form-select form-select-sm mb-3" aria-label=".form-select-sm example" value="categoria" id="categoria">
+              <option value>Seleziona Categoria</option>
+              <option value="1">Viaggi</option>
+              <option value="2">Serie Tv</option>
+            </select>
+
+            <div className="form-check">
+              <input className="form-check-input" type="checkbox" value="tags" id="tags" />
+              <label className="form-check-label" htmlFor="tags"> Visto </label>
+            </div>
+            <div className="form-check">
+              <input className="form-check-input" type="checkbox" value="tags" id="tags" />
+              <label className="form-check-label" htmlFor="tags"> Da Rivedere </label>
+            </div>
+            <div className="form-check">
+              <input className="form-check-input" type="checkbox" value="tags" id="tags" />
+              <label className="form-check-label" htmlFor="tags"> Non Piaciuto </label>
+            </div>
+            <div className='d-flex justify-content-between'>
+              <button type="submit" className="btn btn-primary my-3">Pubblica</button>
+              <button type="submit" className="btn btn-primary my-3">Cancella</button>
             </div>
 
           </form>
-          <button className="btn btn-primary" type="button" popovertarget="off-canvas-form" popovertargetaction="hide">
-            Chiudi
-          </button>
         </div>
 
 
